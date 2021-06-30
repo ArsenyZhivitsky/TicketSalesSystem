@@ -9,5 +9,9 @@ namespace TicketSalesSystem.Services.Interfaces
         Task<IdentityResult> CreateUserAsync(RegisterViewModel model);
 
         Task SignInUserAsync(RegisterViewModel model);
+
+        Task<SignInResult> PasswordSignInUserAsync(LoginViewModel model);
+
+        Task SignOutUserAsync();
     }
 }

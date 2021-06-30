@@ -31,6 +31,18 @@ namespace TicketSalesSystem.Services
             await _signInManager.SignInAsync(user, false);
         }
 
+        public async Task<SignInResult> PasswordSignInUserAsync(LoginViewModel model)
+        {
+            var result =
+                await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+            return await Task.FromResult(result);
+        }
+
+        public async Task SignOutUserAsync()
+        {
+            await _signInManager.SignOutAsync();
+        }
+
         User CreateUserFromModel(RegisterViewModel model)
         {
             User user = new User
