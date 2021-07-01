@@ -44,5 +44,30 @@ namespace TicketSalesSystem.Controllers
 
             return View(model);
         }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var film = _filmService.GetFilm(id.Value);
+
+            if (film == null)
+            {
+                return NotFound();
+            }
+
+            var model = new FilmDetailsViewModel
+            {
+                Id = film.Id,
+                Name = film.Name,
+                Description = film.Description
+            };
+
+            return View(model);
+            //return RedirectToAction("Index");
+        }
     }
 }

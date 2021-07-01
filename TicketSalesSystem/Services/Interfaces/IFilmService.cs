@@ -10,5 +10,7 @@ namespace TicketSalesSystem.Services
         void CreateFilm(FilmViewModel model);
 
         IEnumerable<Film> GetFilms();
+
+        Film GetFilm(int id);
     }
 }

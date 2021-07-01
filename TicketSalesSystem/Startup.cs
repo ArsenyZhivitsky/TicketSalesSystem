@@ -38,9 +38,11 @@ namespace TicketSalesSystem
 
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient<IFilmRepository, FilmRepository>();
+            services.AddTransient<ICinemaRepository, CinemaRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IFilmService, FilmService>();
+            services.AddTransient<ICinemaService, CinemaService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
