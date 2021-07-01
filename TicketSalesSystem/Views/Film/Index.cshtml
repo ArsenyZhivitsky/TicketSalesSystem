@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Domain.Entities.Film>
+
+@{
+    ViewData["Title"] = "Films";
+}
+
+<div class="text-center">
+    @*<h1 class="display-4">Welcome</h1>*@
+    <a asp-controller="Film" asp-action="CreateFilm">Create a new film</a>
+</div>
+
+<p>
+    <h1>Film list:</h1>
+</p>
+
+<table class="table align-content-center">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Name)*@
+                Film Name
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Description)*@
+                Film Description
+            </th>
+        </tr>
+        @*<th></th>*@
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.Name)*@
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Description
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
