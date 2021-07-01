@@ -1,15 +1,18 @@
 ﻿using Domain.Entities;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 
 namespace TicketSalesSystem
 {
     public class RoleInitializer
     {
-        public static async Task InitializeAsync(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+        public static async Task InitializeAsync(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
         {
-            string adminEmail = "admin@gmail.com";
-            string password = "_Aa123456";
+            IConfigurationSection AdminCredentials = configuration.GetSection("AdminCredentials");
+            var adminEmail = AdminCredentials.GetSection("Email").Value;
+            var password = AdminCredentials.GetSection("Password").Value;
+
             if (await roleManager.FindByNameAsync("admin") == null)
             {
                 await roleManager.CreateAsync(new IdentityRole("admin"));
@@ -18,13 +21,16 @@ namespace TicketSalesSystem
             {
                 await roleManager.CreateAsync(new IdentityRole("user"));
             }
-            if (await userManager.FindByNameAsync(adminEmail) == null)
+            if (!string.IsNullOrEmpty(adminEmail) && !string.IsNullOrEmpty(password))
             {
-                User admin = new User { Email = adminEmail, UserName = adminEmail };
-                IdentityResult result = await userManager.CreateAsync(admin, password);
-                if (result.Succeeded)
+                if (await userManager.FindByNameAsync(adminEmail) == null)
                 {
-                    await userManager.AddToRoleAsync(admin, "admin");
+                    User admin = new User { Email = adminEmail, UserName = adminEmail };
+                    IdentityResult result = await userManager.CreateAsync(admin, password);
+                    if (result.Succeeded)
+                    {
+                        await userManager.AddToRoleAsync(admin, "admin");
+                    }
                 }
             }
         }
