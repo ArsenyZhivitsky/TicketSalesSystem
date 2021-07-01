@@ -9,7 +9,7 @@ namespace DataAccess.EFCore
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
         {
-
+            Database.EnsureCreated();
         }
 
         public DbSet<Film> Films { get; set; }

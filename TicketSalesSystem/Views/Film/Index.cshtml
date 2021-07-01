@@ -6,7 +6,11 @@
 
 <div class="text-center">
     @*<h1 class="display-4">Welcome</h1>*@
-    <a asp-controller="Film" asp-action="CreateFilm">Create a new film</a>
+    @if (User.IsInRole("admin"))
+    {
+        <a asp-controller="Film" asp-action="CreateFilm">Create a new film</a>
+    }
+
 </div>
 
 <p>
@@ -20,10 +24,6 @@
                 @*@Html.DisplayNameFor(model => model.Name)*@
                 Film Name
             </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Description)*@
-                Film Description
-            </th>
         </tr>
         @*<th></th>*@
     </thead>
@@ -36,7 +36,7 @@
                         @item.Name
                     </td>
                     <td>
-                        @item.Description
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
                     </td>
                 </tr>
             }

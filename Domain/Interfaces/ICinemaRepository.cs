@@ -2,7 +2,7 @@
 
 namespace Domain.Interfaces
 {
-    public interface IFilmRepository : IGenericRepository<Film>
+    public interface ICinemaRepository : IGenericRepository<Cinema>
     {
     }
 }

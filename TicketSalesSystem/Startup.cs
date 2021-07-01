@@ -38,6 +38,7 @@ namespace TicketSalesSystem
 
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient<IFilmRepository, FilmRepository>();
+            services.AddTransient<ICinemaRepository, CinemaRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IFilmService, FilmService>();
