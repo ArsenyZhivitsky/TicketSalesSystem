@@ -23,7 +23,8 @@ namespace TicketSalesSystem.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            //return View();
+            return RedirectToAction("Index", "Film");
         }
 
         public IActionResult Privacy()

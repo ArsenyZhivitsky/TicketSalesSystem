@@ -1,0 +1,14 @@
+﻿using TicketSalesSystem.ViewModels;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Domain.Entities;
+
+namespace TicketSalesSystem.Services
+{
+    public interface IFilmService
+    {
+        void CreateFilm(FilmViewModel model);
+
+        IEnumerable<Film> GetFilms();
+    }
+}

@@ -40,6 +40,7 @@ namespace TicketSalesSystem
             services.AddTransient<IFilmRepository, FilmRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IFilmService, FilmService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
