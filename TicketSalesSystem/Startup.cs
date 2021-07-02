@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Identity;
 using TicketSalesSystem.Services.Interfaces;
 using TicketSalesSystem.Services;
+using Service.CinemaService;
 
 namespace TicketSalesSystem
 {

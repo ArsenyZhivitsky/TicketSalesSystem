@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Domain.Entities.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Service.CinemaService;
 using System.Threading.Tasks;
-using TicketSalesSystem.Services.Interfaces;
-using TicketSalesSystem.ViewModels;
 
 namespace TicketSalesSystem.Controllers
 {

@@ -8,12 +8,12 @@ namespace TicketSalesSystem.Services
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        private readonly ICinemaService _cinemaService;
+        //private readonly ICinemaService _cinemaService;
 
-        public SessionService(IUnitOfWork unitOfWork, ICinemaService cinemaService)
+        public SessionService(IUnitOfWork unitOfWork)//, ICinemaService cinemaService)
         {
             _unitOfWork = unitOfWork;
-            _cinemaService = cinemaService;
+            //_cinemaService = cinemaService;
         }
         public string GetFilmName(int filmId)
         {
