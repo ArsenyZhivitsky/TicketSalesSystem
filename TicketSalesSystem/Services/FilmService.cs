@@ -38,6 +38,12 @@ namespace TicketSalesSystem.Services
             return film;
         }
 
+        public string GetFilmName(int id)
+        {
+            var filmName = _unitOfWork.Films.GetById(id).Name;
+            return filmName;
+        }
+
         Film CreateFilmFromModel(FilmViewModel model)
         {
             Film film = new Film

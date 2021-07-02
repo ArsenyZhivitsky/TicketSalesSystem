@@ -4,10 +4,9 @@ using TicketSalesSystem.ViewModels;
 
 namespace TicketSalesSystem.Services.Interfaces
 {
-    public interface ICinemaService
+    public interface ISessionService
     {
-        void CreateCinema(CinemaViewModel model);
+        string GetFilmName(int filmId);
 
-        IEnumerable<Cinema> GetCinemaList();
     }
 }
