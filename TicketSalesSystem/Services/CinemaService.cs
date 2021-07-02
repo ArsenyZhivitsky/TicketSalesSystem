@@ -1,9 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TicketSalesSystem.Services.Interfaces;
 using TicketSalesSystem.ViewModels;
 
@@ -24,6 +21,12 @@ namespace TicketSalesSystem.Services
 
             _unitOfWork.Cinemas.Add(cinema);
             _unitOfWork.Complete();
+        }
+
+        public IEnumerable<Cinema> GetCinemaList()
+        {
+            var cinemas = _unitOfWork.Cinemas.GetAll();
+            return cinemas;
         }
 
         Cinema CreateCinemaFromModel(CinemaViewModel model)

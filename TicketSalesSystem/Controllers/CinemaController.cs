@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using TicketSalesSystem.Services;
 using TicketSalesSystem.Services.Interfaces;
 using TicketSalesSystem.ViewModels;
 
@@ -18,10 +14,6 @@ namespace TicketSalesSystem.Controllers
             _cinemaService = cinemaService;
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
 
         [HttpGet]
         public IActionResult CreateCinema()

@@ -12,5 +12,7 @@ namespace TicketSalesSystem.Services
         IEnumerable<Film> GetFilms();
 
         Film GetFilm(int id);
+
+        string GetFilmName(int id);
     }
 }
