@@ -1,6 +1,5 @@
 ﻿using Domain.Entities.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Service.CinemaService;
 using System.Threading.Tasks;
 using Service;
 

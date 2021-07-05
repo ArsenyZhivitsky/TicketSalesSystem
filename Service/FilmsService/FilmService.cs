@@ -13,14 +13,6 @@ namespace Service.FilmsService
         //    _unitOfWork = unitOfWork;
         //}
 
-        //public void CreateFilm(FilmViewModel model)
-        //{
-        //    var film = CreateFilmFromModel(model);
-
-        //    _unitOfWork.Films.Add(film);
-        //    _unitOfWork.Complete();
-        //}
-
         //public IEnumerable<Film> GetFilms()
         //{
         //    var films = _unitOfWork.Films.GetAll();
@@ -40,16 +32,7 @@ namespace Service.FilmsService
         //    return filmName;
         //}
 
-        //Film CreateFilmFromModel(FilmViewModel model)
-        //{
-        //    Film film = new Film
-        //    {
-        //        Name = model.Name,
-        //        Description = model.Description
-        //    };
-
-        //    return film;
-        //}
+       
         public void CreateFilm(FilmViewModel model)
         {
             throw new System.NotImplementedException();

@@ -1,6 +1,7 @@
 ﻿using Domain.Entities;
 using Domain.Entities.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Service;
 using Service.FilmsService;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,17 +11,20 @@ namespace TicketSalesSystem.Controllers
 {
     public class FilmController : Controller
     {
-        private readonly IFilmService _filmService;
+        private readonly CreateFilmUnitOfWork _createFilm;
+        private readonly GetFilmsUnitOfWork _getFilms;
+        private readonly GetFilmUnitOfWork _getFilm;
 
-        public FilmController(IFilmService filmService)
+        public FilmController(CreateFilmUnitOfWork createFilm, GetFilmsUnitOfWork getFilms, GetFilmUnitOfWork getFilm)
         {
-            _filmService = filmService;
+            _createFilm = createFilm;
+            _getFilms = getFilms;
+            _getFilm = getFilm;
         }
 
         public IActionResult Index()
         {
-            //var films = _filmService.GetFilms();
-            var films = new List<Film>();
+            var films = _getFilms.GetFilms();
 
             return View(films);
         }
@@ -36,7 +40,7 @@ namespace TicketSalesSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _filmService.CreateFilm(model);
+                _createFilm.CreateFilm(model);
 
                 return RedirectToAction("Index");
             }
@@ -51,7 +55,8 @@ namespace TicketSalesSystem.Controllers
                 return NotFound();
             }
 
-            var film = _filmService.GetFilm(id.Value);
+
+            var film = _getFilm.GetFilm(id.Value);
 
             if (film == null)
             {
@@ -66,7 +71,6 @@ namespace TicketSalesSystem.Controllers
             };
 
             return View(model);
-            //return RedirectToAction("Index");
         }
     }
 }
