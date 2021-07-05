@@ -1,13 +1,10 @@
 ﻿using Domain.Interfaces;
-using TicketSalesSystem.Services.Interfaces;
-using TicketSalesSystem.ViewModels;
 
-namespace TicketSalesSystem.Services
+namespace Service.SessionService
 {
     public class SessionService : ISessionService
     {
         private readonly IUnitOfWork _unitOfWork;
-
         //private readonly ICinemaService _cinemaService;
 
         public SessionService(IUnitOfWork unitOfWork)//, ICinemaService cinemaService)
@@ -20,5 +17,6 @@ namespace TicketSalesSystem.Services
             var filmName = _unitOfWork.Films.GetById(filmId).Name;
             return filmName;
         }
+
     }
 }

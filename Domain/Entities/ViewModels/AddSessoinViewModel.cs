@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TicketSalesSystem.ViewModels
+namespace Domain.Entities.ViewModels
 {
     public class AddSessoinViewModel
     {

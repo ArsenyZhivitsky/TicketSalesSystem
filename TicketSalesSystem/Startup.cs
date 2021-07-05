@@ -10,11 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Identity;
-using TicketSalesSystem.Services.Interfaces;
-using TicketSalesSystem.Services;
 using Service.CinemaService;
 using Service.UserService;
 using Service.FilmsService;
+using Service.SessionService;
 
 namespace TicketSalesSystem
 {
