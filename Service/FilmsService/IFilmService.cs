@@ -1,9 +1,8 @@
-﻿using TicketSalesSystem.ViewModels;
-using System.Threading.Tasks;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Domain.Entities.ViewModels;
 using Domain.Entities;
 
-namespace TicketSalesSystem.Services
+namespace Service.FilmsService
 {
     public interface IFilmService
     {

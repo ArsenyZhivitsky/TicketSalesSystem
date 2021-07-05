@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Domain.Entities.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
-using TicketSalesSystem.ViewModels;
 
-namespace TicketSalesSystem.Services.Interfaces
+namespace Service.UserService
 {
     public interface IUserService
     {
