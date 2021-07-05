@@ -1,6 +1,6 @@
-﻿using DataAccess.EFCore.Repositories;
+﻿using DataAccess.EFCore.Interfaces;
+using DataAccess.EFCore.Repositories;
 using Domain.Entities;
-using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;

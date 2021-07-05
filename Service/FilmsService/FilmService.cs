@@ -1,7 +1,7 @@
-﻿using Domain.Interfaces;
+﻿using DataAccess.EFCore.Interfaces;
 using Domain.Entities;
-using System.Collections.Generic;
 using Domain.Entities.ViewModels;
+using System.Collections.Generic;
 
 namespace Service.FilmsService
 {

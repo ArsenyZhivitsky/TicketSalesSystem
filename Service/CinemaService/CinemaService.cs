@@ -1,6 +1,6 @@
-﻿using Domain.Entities;
+﻿using DataAccess.EFCore.Interfaces;
+using Domain.Entities;
 using Domain.Entities.ViewModels;
-using Domain.Interfaces;
 using System.Collections.Generic;
 
 namespace Service.CinemaService

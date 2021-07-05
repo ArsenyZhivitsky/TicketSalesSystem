@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace Domain.Interfaces
+namespace DataAccess.EFCore.Interfaces
 {
     public interface IFilmRepository : IGenericRepository<Film>
     {

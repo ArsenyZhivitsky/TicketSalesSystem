@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Interfaces
+namespace DataAccess.EFCore.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {

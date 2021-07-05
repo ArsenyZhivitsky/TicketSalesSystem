@@ -1,4 +1,4 @@
-﻿using Domain.Interfaces;
+﻿using DataAccess.EFCore.Interfaces;
 
 namespace Service.SessionService
 {

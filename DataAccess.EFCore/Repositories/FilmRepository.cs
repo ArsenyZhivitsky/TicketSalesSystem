@@ -1,5 +1,5 @@
-﻿using Domain.Entities;
-using Domain.Interfaces;
+﻿using DataAccess.EFCore.Interfaces;
+using Domain.Entities;
 
 namespace DataAccess.EFCore.Repositories
 {

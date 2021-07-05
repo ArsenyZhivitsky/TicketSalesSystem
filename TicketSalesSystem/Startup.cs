@@ -1,7 +1,7 @@
 using DataAccess.EFCore;
+using DataAccess.EFCore.Interfaces;
 using DataAccess.EFCore.Repositories;
 using DataAccess.EFCore.UnitOfWork;
-using Domain.Interfaces;
 using Domain.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

@@ -1,9 +1,8 @@
-﻿using Domain.Interfaces;
+﻿using DataAccess.EFCore.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace DataAccess.EFCore.Repositories
 {
