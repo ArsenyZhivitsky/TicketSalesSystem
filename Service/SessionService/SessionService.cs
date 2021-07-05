@@ -4,19 +4,20 @@ namespace Service.SessionService
 {
     public class SessionService : ISessionService
     {
-        private readonly IUnitOfWork _unitOfWork;
-        //private readonly ICinemaService _cinemaService;
+        //private readonly IUnitOfWork _unitOfWork;
 
-        public SessionService(IUnitOfWork unitOfWork)//, ICinemaService cinemaService)
-        {
-            _unitOfWork = unitOfWork;
-            //_cinemaService = cinemaService;
-        }
+        //public SessionService(IUnitOfWork unitOfWork)
+        //{
+        //    _unitOfWork = unitOfWork; 
+        //}
+        //public string GetFilmName(int filmId)
+        //{
+        //    var filmName = _unitOfWork.Films.GetById(filmId).Name;
+        //    return filmName;
+        //}
         public string GetFilmName(int filmId)
         {
-            var filmName = _unitOfWork.Films.GetById(filmId).Name;
-            return filmName;
+            throw new System.NotImplementedException();
         }
-
     }
 }

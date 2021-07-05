@@ -1,6 +1,8 @@
-﻿using Domain.Entities.ViewModels;
+﻿using Domain.Entities;
+using Domain.Entities.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Service.FilmsService;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace TicketSalesSystem.Controllers
@@ -17,7 +19,8 @@ namespace TicketSalesSystem.Controllers
 
         public IActionResult Index()
         {
-            var films = _filmService.GetFilms();
+            //var films = _filmService.GetFilms();
+            var films = new List<Film>();
 
             return View(films);
         }

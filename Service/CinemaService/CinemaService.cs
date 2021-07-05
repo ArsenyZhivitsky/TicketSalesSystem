@@ -7,35 +7,28 @@ namespace Service.CinemaService
 {
     public class CinemaService : ICinemaService
     {
-        private readonly IUnitOfWork _unitOfWork;
+        //private readonly IUnitOfWork _unitOfWork;
 
-        public CinemaService(IUnitOfWork unitOfWork)
-        {
-            _unitOfWork = unitOfWork;
-        }
+        //public CinemaService(IUnitOfWork unitOfWork)
+        //{
+        //    _unitOfWork = unitOfWork;
+        //}
+
+
+        //public IEnumerable<Cinema> GetCinemaList()
+        //{
+        //    var cinemas = _unitOfWork.Cinemas.GetAll();
+        //    return cinemas;
+        //}
 
         public void CreateCinema(CinemaViewModel model)
         {
-            var cinema = CreateCinemaFromModel(model);
-
-            _unitOfWork.Cinemas.Add(cinema);
-            _unitOfWork.Complete();
+            throw new System.NotImplementedException();
         }
 
         public IEnumerable<Cinema> GetCinemaList()
         {
-            var cinemas = _unitOfWork.Cinemas.GetAll();
-            return cinemas;
-        }
-
-        Cinema CreateCinemaFromModel(CinemaViewModel model)
-        {
-            var cinema = new Cinema
-            {
-                Name = model.Name
-            };
-
-            return cinema;
+            throw new System.NotImplementedException();
         }
     }
 }

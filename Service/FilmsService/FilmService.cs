@@ -7,49 +7,67 @@ namespace Service.FilmsService
 {
     public class FilmService : IFilmService
     {
-        private readonly IUnitOfWork _unitOfWork;
-        public FilmService(IUnitOfWork unitOfWork)
-        {
-            _unitOfWork = unitOfWork;
-        }
+        //private readonly IUnitOfWork _unitOfWork;
+        //public FilmService(IUnitOfWork unitOfWork)
+        //{
+        //    _unitOfWork = unitOfWork;
+        //}
 
+        //public void CreateFilm(FilmViewModel model)
+        //{
+        //    var film = CreateFilmFromModel(model);
+
+        //    _unitOfWork.Films.Add(film);
+        //    _unitOfWork.Complete();
+        //}
+
+        //public IEnumerable<Film> GetFilms()
+        //{
+        //    var films = _unitOfWork.Films.GetAll();
+
+        //    return films;
+        //}
+
+        //public Film GetFilm(int id)
+        //{
+        //    var film = _unitOfWork.Films.GetById(id);
+        //    return film;
+        //}
+
+        //public string GetFilmName(int id)
+        //{
+        //    var filmName = _unitOfWork.Films.GetById(id).Name;
+        //    return filmName;
+        //}
+
+        //Film CreateFilmFromModel(FilmViewModel model)
+        //{
+        //    Film film = new Film
+        //    {
+        //        Name = model.Name,
+        //        Description = model.Description
+        //    };
+
+        //    return film;
+        //}
         public void CreateFilm(FilmViewModel model)
         {
-            var film = CreateFilmFromModel(model);
-
-            _unitOfWork.Films.Add(film);
-            _unitOfWork.Complete();
-        }
-
-        public IEnumerable<Film> GetFilms()
-        {
-            var films = _unitOfWork.Films.GetAll();
-
-            return films;
+            throw new System.NotImplementedException();
         }
 
         public Film GetFilm(int id)
         {
-            var film = _unitOfWork.Films.GetById(id);
-            return film;
+            throw new System.NotImplementedException();
         }
 
         public string GetFilmName(int id)
         {
-            var filmName = _unitOfWork.Films.GetById(id).Name;
-            return filmName;
+            throw new System.NotImplementedException();
         }
 
-        Film CreateFilmFromModel(FilmViewModel model)
+        public IEnumerable<Film> GetFilms()
         {
-            Film film = new Film
-            {
-                Name = model.Name,
-                Description = model.Description
-            };
-
-            return film;
+            throw new System.NotImplementedException();
         }
-
     }
 }

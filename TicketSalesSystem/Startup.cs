@@ -14,6 +14,7 @@ using Service.CinemaService;
 using Service.UserService;
 using Service.FilmsService;
 using Service.SessionService;
+using Service;
 
 namespace TicketSalesSystem
 {
@@ -45,8 +46,9 @@ namespace TicketSalesSystem
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IFilmService, FilmService>();
-            services.AddTransient<ICinemaService, CinemaService>();
+            //services.AddTransient<ICinemaService, CinemaService>();
             services.AddTransient<ISessionService, SessionService>();
+            services.AddTransient<CreateCinemaUnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

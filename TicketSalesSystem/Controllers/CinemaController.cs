@@ -2,18 +2,18 @@
 using Microsoft.AspNetCore.Mvc;
 using Service.CinemaService;
 using System.Threading.Tasks;
+using Service;
 
 namespace TicketSalesSystem.Controllers
 {
     public class CinemaController : Controller
     {
-        private readonly ICinemaService _cinemaService;
+        private readonly CreateCinemaUnitOfWork _createCinema;
 
-        public CinemaController(ICinemaService cinemaService)
+        public CinemaController(CreateCinemaUnitOfWork createCinema)
         {
-            _cinemaService = cinemaService;
+            _createCinema = createCinema;
         }
-
 
         [HttpGet]
         public IActionResult CreateCinema()
@@ -26,7 +26,7 @@ namespace TicketSalesSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _cinemaService.CreateCinema(model);
+                _createCinema.CreateCinema(model);
 
                 return RedirectToAction("Index", "Film");
             }
