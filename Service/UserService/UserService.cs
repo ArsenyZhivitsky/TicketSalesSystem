@@ -1,10 +1,9 @@
 ﻿using Domain.Entities;
+using Domain.Entities.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
-using TicketSalesSystem.Services.Interfaces;
-using TicketSalesSystem.ViewModels;
 
-namespace TicketSalesSystem.Services
+namespace Service.UserService
 {
     public class UserService : IUserService
     {
@@ -26,7 +25,7 @@ namespace TicketSalesSystem.Services
         }
 
         public async Task SignInUserAsync(RegisterViewModel model)
-        { 
+        {
             var user = CreateUserFromModel(model);
             await _signInManager.SignInAsync(user, false);
         }

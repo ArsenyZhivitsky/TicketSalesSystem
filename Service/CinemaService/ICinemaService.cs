@@ -1,8 +1,8 @@
 ﻿using Domain.Entities;
+using Domain.Entities.ViewModels;
 using System.Collections.Generic;
-using TicketSalesSystem.ViewModels;
 
-namespace TicketSalesSystem.Services.Interfaces
+namespace Service.CinemaService
 {
     public interface ICinemaService
     {

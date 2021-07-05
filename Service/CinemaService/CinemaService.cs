@@ -1,10 +1,9 @@
 ﻿using Domain.Entities;
+using Domain.Entities.ViewModels;
 using Domain.Interfaces;
 using System.Collections.Generic;
-using TicketSalesSystem.Services.Interfaces;
-using TicketSalesSystem.ViewModels;
 
-namespace TicketSalesSystem.Services
+namespace Service.CinemaService
 {
     public class CinemaService : ICinemaService
     {

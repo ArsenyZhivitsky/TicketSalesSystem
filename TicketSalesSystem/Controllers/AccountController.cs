@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using TicketSalesSystem.ViewModels;
-using TicketSalesSystem.Services.Interfaces;
+using Service.UserService;
+using Domain.Entities.ViewModels;
 
 namespace TicketSalesSystem.Controllers
 {

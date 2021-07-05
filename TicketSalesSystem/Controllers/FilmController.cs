@@ -1,11 +1,7 @@
-﻿using Domain.Interfaces;
+﻿using Domain.Entities.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Service.FilmsService;
 using System.Threading.Tasks;
-using TicketSalesSystem.Services;
-using TicketSalesSystem.ViewModels;
 
 namespace TicketSalesSystem.Controllers
 
