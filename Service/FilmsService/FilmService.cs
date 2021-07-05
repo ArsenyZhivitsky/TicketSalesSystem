@@ -1,17 +1,13 @@
 ﻿using Domain.Interfaces;
 using Domain.Entities;
-using TicketSalesSystem.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Domain.Entities.ViewModels;
 
-namespace TicketSalesSystem.Services
+namespace Service.FilmsService
 {
     public class FilmService : IFilmService
     {
         private readonly IUnitOfWork _unitOfWork;
-
         public FilmService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
@@ -54,5 +50,6 @@ namespace TicketSalesSystem.Services
 
             return film;
         }
+
     }
 }

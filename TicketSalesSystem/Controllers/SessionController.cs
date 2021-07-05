@@ -1,5 +1,6 @@
 ﻿using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Service.FilmsService;
 using TicketSalesSystem.Services;
 using TicketSalesSystem.Services.Interfaces;
 

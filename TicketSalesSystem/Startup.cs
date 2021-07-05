@@ -14,6 +14,7 @@ using TicketSalesSystem.Services.Interfaces;
 using TicketSalesSystem.Services;
 using Service.CinemaService;
 using Service.UserService;
+using Service.FilmsService;
 
 namespace TicketSalesSystem
 {
