@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Identity;
 using TicketSalesSystem.Services.Interfaces;
 using TicketSalesSystem.Services;
 using Service.CinemaService;
+using Service.UserService;
 
 namespace TicketSalesSystem
 {

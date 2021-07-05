@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TicketSalesSystem.ViewModels
+namespace Domain.Entities.ViewModels
 {
-    public class LoginViewModel
+    public class RegisterViewModel
     {
         [Required]
         [Display(Name = "Email")]
@@ -13,9 +13,10 @@ namespace TicketSalesSystem.ViewModels
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remamber me?")]
-        public bool RememberMe { get; set; }
-
-        public string ReturnUrl { get; set; }
+        [Required]
+        [Compare("Password", ErrorMessage = "passwords are not matching")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm password")]
+        public string PasswordConfirm { get; set; }
     }
 }
