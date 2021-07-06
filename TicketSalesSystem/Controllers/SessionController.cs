@@ -1,19 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Service.FilmsService;
+using Service;
 
 namespace TicketSalesSystem.Controllers
 {
     public class SessionController : Controller
     {
-        private readonly IFilmService _filmService;
-        //private readonly ICinemaService _cinemaService;
-        //private readonly ISessionService _sessionService;
+        private readonly GetFilmNameUnitOfWork _getFilmName;
 
-        public SessionController(IFilmService filmService)//, ICinemaService cinemaService)
+        public SessionController(GetFilmNameUnitOfWork getFilmName)
         {
-            _filmService = filmService;
-            //_cinemaService = cinemaService;
-            //_sessionService = sessionService;
+            _getFilmName = getFilmName;
         }
 
         [HttpGet]
@@ -24,7 +20,7 @@ namespace TicketSalesSystem.Controllers
                 return NotFound();
             }
 
-            var filmName = _filmService.GetFilmName(id.Value);
+            var filmName = _getFilmName.GetFilmName(id.Value);
             //var cinemas = _cinemaService.GetCinemaList();
 
             ViewBag.FilmName = filmName;

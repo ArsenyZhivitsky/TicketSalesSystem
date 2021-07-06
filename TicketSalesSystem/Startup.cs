@@ -11,8 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Service.UserService;
-using Service.FilmsService;
-using Service.SessionService;
 using Service;
 
 namespace TicketSalesSystem
@@ -42,15 +40,12 @@ namespace TicketSalesSystem
             services.AddTransient<IFilmRepository, FilmRepository>();
             services.AddTransient<ICinemaRepository, CinemaRepository>();
             services.AddTransient<ISessionRepository, SessionRepository>();
-            services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IFilmService, FilmService>();
-            //services.AddTransient<ICinemaService, CinemaService>();
-            services.AddTransient<ISessionService, SessionService>();
             services.AddTransient<CreateCinemaUnitOfWork>();
             services.AddTransient<CreateFilmUnitOfWork>();
             services.AddTransient<GetFilmsUnitOfWork>();
             services.AddTransient<GetFilmUnitOfWork>();
+            services.AddTransient<GetFilmNameUnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

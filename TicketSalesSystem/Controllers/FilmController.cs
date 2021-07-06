@@ -2,7 +2,6 @@
 using Domain.Entities.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Service;
-using Service.FilmsService;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
