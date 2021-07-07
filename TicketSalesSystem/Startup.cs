@@ -10,7 +10,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Service.UserService;
 using Service;
 
 namespace TicketSalesSystem
@@ -40,7 +39,9 @@ namespace TicketSalesSystem
             services.AddTransient<IFilmRepository, FilmRepository>();
             services.AddTransient<ICinemaRepository, CinemaRepository>();
             services.AddTransient<ISessionRepository, SessionRepository>();
-            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<CreateUserUnitOfWork>();
+            services.AddTransient<SignInUnitOfWork>();
+            services.AddTransient<SignOutUnitOfWork>();
             services.AddTransient<CreateCinemaUnitOfWork>();
             services.AddTransient<CreateFilmUnitOfWork>();
             services.AddTransient<GetFilmsUnitOfWork>();

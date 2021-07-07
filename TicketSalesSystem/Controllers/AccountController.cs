@@ -1,17 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Domain.Entities.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Service;
 using System.Threading.Tasks;
-using Service.UserService;
-using Domain.Entities.ViewModels;
+
 
 namespace TicketSalesSystem.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IUserService _userService;
+        private readonly CreateUserUnitOfWork _createUser;
+        private readonly SignInUnitOfWork _signIn;
+        private readonly SignOutUnitOfWork _signOut;
 
-        public AccountController(IUserService userService)
+        public AccountController(CreateUserUnitOfWork createUser, SignInUnitOfWork signIn, SignOutUnitOfWork signOut)
         {
-            _userService = userService;
+            _createUser = createUser;
+            _signIn = signIn;
+            _signOut = signOut;
         }
 
         [HttpGet]
@@ -25,11 +30,11 @@ namespace TicketSalesSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _userService.CreateUserAsync(model);
+                var result = await _createUser.CreateUser(model);
 
                 if (result.Succeeded)
                 {
-                    await _userService.SignInUserAsync(model);
+                    await _signIn.SignInUser(model);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -56,7 +61,7 @@ namespace TicketSalesSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _userService.PasswordSignInUserAsync(model);
+                var result = await _signIn.PasswordSignInUser(model);
 
                 if (result.Succeeded)
                 {
@@ -81,7 +86,7 @@ namespace TicketSalesSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
-            await _userService.SignOutUserAsync();
+            await _signOut.SignOutUser();
 
             return RedirectToAction("Index", "Home");
         }
