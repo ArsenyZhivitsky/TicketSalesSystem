@@ -4,10 +4,11 @@ using DataAccess.EFCore.Repositories;
 using DataAccess.EFCore.UnitOfWork;
 using Domain.Entities;
 using Domain.Entities.ViewModels;
+using Service.Interfaces;
 
 namespace Service
 {
-    public class CreateFilmUnitOfWork : UnitOfWork
+    public class CreateFilmUnitOfWork : UnitOfWork, ICreateFilmUnitOfWork
     {
         public CreateFilmUnitOfWork(ApplicationContext context) : base(context)
         {

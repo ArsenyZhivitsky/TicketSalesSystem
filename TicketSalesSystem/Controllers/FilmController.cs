@@ -1,8 +1,7 @@
-﻿using Domain.Entities;
-using Domain.Entities.ViewModels;
+﻿using Domain.Entities.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Service;
-using System.Collections.Generic;
+using Service.Interfaces;
 using System.Threading.Tasks;
 
 namespace TicketSalesSystem.Controllers
@@ -10,11 +9,11 @@ namespace TicketSalesSystem.Controllers
 {
     public class FilmController : Controller
     {
-        private readonly CreateFilmUnitOfWork _createFilm;
+        private readonly ICreateFilmUnitOfWork _createFilm;
         private readonly GetFilmsUnitOfWork _getFilms;
         private readonly GetFilmUnitOfWork _getFilm;
 
-        public FilmController(CreateFilmUnitOfWork createFilm, GetFilmsUnitOfWork getFilms, GetFilmUnitOfWork getFilm)
+        public FilmController(ICreateFilmUnitOfWork createFilm, GetFilmsUnitOfWork getFilms, GetFilmUnitOfWork getFilm)
         {
             _createFilm = createFilm;
             _getFilms = getFilms;
