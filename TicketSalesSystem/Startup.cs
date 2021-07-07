@@ -1,15 +1,9 @@
-using DataAccess.EFCore;
-using DataAccess.EFCore.Interfaces;
-using DataAccess.EFCore.Repositories;
-using Domain.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.AspNetCore.Identity;
-using TicketSalesSystem.Extensions;
+using Service.Extensions;
 
 namespace TicketSalesSystem
 {
@@ -25,15 +19,9 @@ namespace TicketSalesSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationContext> (options =>
-            options.UseSqlServer(
-                Configuration.GetConnectionString("DefaultConnection"),
-                b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
+            services.AddDatabase(Configuration);
             services.AddControllersWithViews();
-
-            services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationContext>();
-
+            services.AddIdentityToApplication();
             services.AddRepositories();
             services.AddUnitOfWorks();
             

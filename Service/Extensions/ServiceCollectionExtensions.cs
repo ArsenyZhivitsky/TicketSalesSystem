@@ -1,9 +1,13 @@
-﻿using DataAccess.EFCore.Interfaces;
+﻿using DataAccess.EFCore;
+using DataAccess.EFCore.Interfaces;
 using DataAccess.EFCore.Repositories;
+using Domain.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Service;
 
-namespace TicketSalesSystem.Extensions
+namespace Service.Extensions
 {
     public static class ServiceCollectionExtensions
     {
@@ -27,6 +31,24 @@ namespace TicketSalesSystem.Extensions
             services.AddScoped<GetFilmsUnitOfWork>();
             services.AddScoped<GetFilmUnitOfWork>();
             services.AddScoped<GetFilmNameUnitOfWork>();
+
+            return services;
+        }
+
+        public static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
+        {
+           services.AddDbContext<ApplicationContext>(options =>
+           options.UseSqlServer(
+               configuration.GetConnectionString("DefaultConnection"),
+               b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
+
+            return services;
+        }
+
+        public static IServiceCollection AddIdentityToApplication(this IServiceCollection services)
+        {
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationContext>();
 
             return services;
         }
