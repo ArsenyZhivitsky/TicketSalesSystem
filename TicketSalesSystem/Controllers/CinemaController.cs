@@ -1,15 +1,15 @@
 ﻿using Domain.Entities.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Service;
+using Service.Interfaces;
 
 namespace TicketSalesSystem.Controllers
 {
     public class CinemaController : Controller
     {
-        private readonly CreateCinemaUnitOfWork _createCinema;
+        private readonly ICreateCinemaUnitOfWork _createCinema;
 
-        public CinemaController(CreateCinemaUnitOfWork createCinema)
+        public CinemaController(ICreateCinemaUnitOfWork createCinema)
         {
             _createCinema = createCinema;
         }

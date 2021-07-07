@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Service.Interfaces;
 
 namespace Service.Extensions
 {
@@ -26,7 +27,7 @@ namespace Service.Extensions
             services.AddScoped<CreateUserUnitOfWork>();
             services.AddScoped<SignInUnitOfWork>();
             services.AddScoped<SignOutUnitOfWork>();
-            services.AddScoped<CreateCinemaUnitOfWork>();
+            services.AddScoped<ICreateCinemaUnitOfWork, CreateCinemaUnitOfWork>();
             services.AddScoped<CreateFilmUnitOfWork>();
             services.AddScoped<GetFilmsUnitOfWork>();
             services.AddScoped<GetFilmUnitOfWork>();
