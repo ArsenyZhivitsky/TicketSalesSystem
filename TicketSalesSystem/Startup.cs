@@ -1,7 +1,6 @@
 using DataAccess.EFCore;
 using DataAccess.EFCore.Interfaces;
 using DataAccess.EFCore.Repositories;
-using DataAccess.EFCore.UnitOfWork;
 using Domain.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Service;
+using TicketSalesSystem.Extensions;
 
 namespace TicketSalesSystem
 {
@@ -35,18 +34,9 @@ namespace TicketSalesSystem
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationContext>();
 
-            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddTransient<IFilmRepository, FilmRepository>();
-            services.AddTransient<ICinemaRepository, CinemaRepository>();
-            services.AddTransient<ISessionRepository, SessionRepository>();
-            services.AddTransient<CreateUserUnitOfWork>();
-            services.AddTransient<SignInUnitOfWork>();
-            services.AddTransient<SignOutUnitOfWork>();
-            services.AddTransient<CreateCinemaUnitOfWork>();
-            services.AddTransient<CreateFilmUnitOfWork>();
-            services.AddTransient<GetFilmsUnitOfWork>();
-            services.AddTransient<GetFilmUnitOfWork>();
-            services.AddTransient<GetFilmNameUnitOfWork>();
+            services.AddRepositories();
+            services.AddUnitOfWorks();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
