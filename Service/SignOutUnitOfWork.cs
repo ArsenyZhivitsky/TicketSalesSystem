@@ -1,10 +1,11 @@
 ﻿using Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
+using Service.Interfaces;
 
 namespace Service
 {
-    public class SignOutUnitOfWork
+    public class SignOutUnitOfWork : ISignOutUnitOfWork
     {
         private readonly SignInManager<User> _signInManager;
 

@@ -26,7 +26,7 @@ namespace Service.Extensions
         {
             services.AddScoped<ICreateUserUnitOfWork, CreateUserUnitOfWork>();
             services.AddScoped<ISignInUnitOfWork, SignInUnitOfWork>();
-            services.AddScoped<SignOutUnitOfWork>();
+            services.AddScoped<ISignOutUnitOfWork, SignOutUnitOfWork>();
             services.AddScoped<ICreateCinemaUnitOfWork, CreateCinemaUnitOfWork>();
             services.AddScoped<ICreateFilmUnitOfWork, CreateFilmUnitOfWork>();
             services.AddScoped<IGetFilmsUnitOfWork, GetFilmsUnitOfWork>();

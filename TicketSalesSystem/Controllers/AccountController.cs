@@ -11,9 +11,9 @@ namespace TicketSalesSystem.Controllers
     {
         private readonly ICreateUserUnitOfWork _createUser;
         private readonly ISignInUnitOfWork _signIn;
-        private readonly SignOutUnitOfWork _signOut;
+        private readonly ISignOutUnitOfWork _signOut;
 
-        public AccountController(ICreateUserUnitOfWork createUser, ISignInUnitOfWork signIn, SignOutUnitOfWork signOut)
+        public AccountController(ICreateUserUnitOfWork createUser, ISignInUnitOfWork signIn, ISignOutUnitOfWork signOut)
         {
             _createUser = createUser;
             _signIn = signIn;
