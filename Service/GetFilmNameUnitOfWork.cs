@@ -2,10 +2,11 @@
 using DataAccess.EFCore.Interfaces;
 using DataAccess.EFCore.Repositories;
 using DataAccess.EFCore.UnitOfWork;
+using Service.Interfaces;
 
 namespace Service
 {
-    public class GetFilmNameUnitOfWork : UnitOfWork
+    public class GetFilmNameUnitOfWork : UnitOfWork, IGetFilmNameUnitOfWork
     {
         public GetFilmNameUnitOfWork(ApplicationContext context) : base(context)
         {

@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Service;
+using Service.Interfaces;
 
 namespace TicketSalesSystem.Controllers
 {
     public class SessionController : Controller
     {
-        private readonly GetFilmNameUnitOfWork _getFilmName;
+        private readonly IGetFilmNameUnitOfWork _getFilmName;
 
-        public SessionController(GetFilmNameUnitOfWork getFilmName)
+        public SessionController(IGetFilmNameUnitOfWork getFilmName)
         {
             _getFilmName = getFilmName;
         }
