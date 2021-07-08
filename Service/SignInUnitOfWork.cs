@@ -2,10 +2,11 @@
 using Domain.Entities.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
+using Service.Interfaces;
 
 namespace Service
 {
-    public class SignInUnitOfWork
+    public class SignInUnitOfWork : ISignInUnitOfWork
     {
         private readonly SignInManager<User> _signInManager;
 

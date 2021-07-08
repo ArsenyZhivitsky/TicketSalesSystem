@@ -25,7 +25,7 @@ namespace Service.Extensions
         public static IServiceCollection AddUnitOfWorks(this IServiceCollection services)
         {
             services.AddScoped<ICreateUserUnitOfWork, CreateUserUnitOfWork>();
-            services.AddScoped<SignInUnitOfWork>();
+            services.AddScoped<ISignInUnitOfWork, SignInUnitOfWork>();
             services.AddScoped<SignOutUnitOfWork>();
             services.AddScoped<ICreateCinemaUnitOfWork, CreateCinemaUnitOfWork>();
             services.AddScoped<ICreateFilmUnitOfWork, CreateFilmUnitOfWork>();
