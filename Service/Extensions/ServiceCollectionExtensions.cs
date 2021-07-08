@@ -30,7 +30,7 @@ namespace Service.Extensions
             services.AddScoped<ICreateCinemaUnitOfWork, CreateCinemaUnitOfWork>();
             services.AddScoped<ICreateFilmUnitOfWork, CreateFilmUnitOfWork>();
             services.AddScoped<IGetFilmsUnitOfWork, GetFilmsUnitOfWork>();
-            services.AddScoped<GetFilmUnitOfWork>();
+            services.AddScoped<IGetFilmUnitOfWork, GetFilmUnitOfWork>();
             services.AddScoped<IGetFilmNameUnitOfWork, GetFilmNameUnitOfWork>();
 
             return services;
