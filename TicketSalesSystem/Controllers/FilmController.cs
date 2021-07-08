@@ -10,10 +10,10 @@ namespace TicketSalesSystem.Controllers
     public class FilmController : Controller
     {
         private readonly ICreateFilmUnitOfWork _createFilm;
-        private readonly GetFilmsUnitOfWork _getFilms;
+        private readonly IGetFilmsUnitOfWork _getFilms;
         private readonly GetFilmUnitOfWork _getFilm;
 
-        public FilmController(ICreateFilmUnitOfWork createFilm, GetFilmsUnitOfWork getFilms, GetFilmUnitOfWork getFilm)
+        public FilmController(ICreateFilmUnitOfWork createFilm, IGetFilmsUnitOfWork getFilms, GetFilmUnitOfWork getFilm)
         {
             _createFilm = createFilm;
             _getFilms = getFilms;

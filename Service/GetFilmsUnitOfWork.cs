@@ -4,10 +4,11 @@ using DataAccess.EFCore.Repositories;
 using DataAccess.EFCore.UnitOfWork;
 using Domain.Entities;
 using System.Collections.Generic;
+using Service.Interfaces;
 
 namespace Service
 {
-    public class GetFilmsUnitOfWork : UnitOfWork
+    public class GetFilmsUnitOfWork : UnitOfWork, IGetFilmsUnitOfWork
     {
         public GetFilmsUnitOfWork(ApplicationContext context) : base(context)
         {
