@@ -1,6 +1,7 @@
 ﻿using Domain.Entities.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Service;
+using Service.Interfaces;
 using System.Threading.Tasks;
 
 
@@ -8,11 +9,11 @@ namespace TicketSalesSystem.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly CreateUserUnitOfWork _createUser;
+        private readonly ICreateUserUnitOfWork _createUser;
         private readonly SignInUnitOfWork _signIn;
         private readonly SignOutUnitOfWork _signOut;
 
-        public AccountController(CreateUserUnitOfWork createUser, SignInUnitOfWork signIn, SignOutUnitOfWork signOut)
+        public AccountController(ICreateUserUnitOfWork createUser, SignInUnitOfWork signIn, SignOutUnitOfWork signOut)
         {
             _createUser = createUser;
             _signIn = signIn;

@@ -2,10 +2,11 @@
 using Domain.Entities.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
+using Service.Interfaces;
 
 namespace Service
 {
-    public class CreateUserUnitOfWork 
+    public class CreateUserUnitOfWork  : ICreateUserUnitOfWork
     {
         private readonly UserManager<User> _userManager;
 
